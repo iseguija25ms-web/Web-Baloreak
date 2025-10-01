@@ -657,3 +657,273 @@ checkoutBtn.addEventListener('click', () => {
 
 // Initialize Cart on Load
 loadCart();
+
+// ==================== CUSTOM T-SHIRT DESIGNER ====================
+
+const tshirtPath = document.getElementById('tshirt-path');
+const colorButtons = document.querySelectorAll('.color-btn');
+const imageUpload = document.getElementById('image-upload');
+const uploadedImageInfo = document.getElementById('uploaded-image-info');
+const imageName = document.getElementById('image-name');
+const removeImageBtn = document.getElementById('remove-image');
+const imageControls = document.getElementById('image-controls');
+const imageSizeSlider = document.getElementById('image-size');
+const resetDesignBtn = document.getElementById('reset-design');
+const addCustomToCartBtn = document.getElementById('add-custom-to-cart');
+const designBounds = document.getElementById('design-bounds');
+
+let currentColor = '#ffffff';
+let uploadedImage = null;
+let designImage = null;
+let isDragging = false;
+let dragStartX = 0;
+let dragStartY = 0;
+let imageX = 0;
+let imageY = 0;
+
+// Color Selection
+colorButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Remove ring from all buttons
+        colorButtons.forEach(b => b.classList.remove('ring-4', 'ring-purple-500'));
+        
+        // Add ring to selected button
+        this.classList.add('ring-4', 'ring-purple-500');
+        
+        // Change t-shirt color
+        currentColor = this.getAttribute('data-color');
+        tshirtPath.setAttribute('fill', currentColor);
+    });
+});
+
+// Image Upload
+imageUpload.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        // Check file size (max 5MB)
+        if (file.size > 5 * 1024 * 1024) {
+            alert('⚠️ Irudia handiegia da / La imagen es demasiado grande (max 5MB)');
+            return;
+        }
+        
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            uploadedImage = event.target.result;
+            createDesignImage(uploadedImage);
+            
+            // Show uploaded image info
+            imageName.textContent = file.name;
+            uploadedImageInfo.classList.remove('hidden');
+            imageControls.classList.remove('hidden');
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+// Create draggable design image
+function createDesignImage(imageSrc) {
+    // Remove existing image if any
+    if (designImage) {
+        designImage.remove();
+    }
+    
+    // Create new image element
+    designImage = document.createElement('img');
+    designImage.src = imageSrc;
+    designImage.className = 'absolute cursor-move select-none';
+    designImage.style.width = '100px';
+    designImage.style.height = '100px';
+    designImage.style.objectFit = 'contain';
+    designImage.style.left = '50%';
+    designImage.style.top = '50%';
+    designImage.style.transform = 'translate(-50%, -50%)';
+    designImage.style.pointerEvents = 'auto';
+    designImage.draggable = false;
+    
+    designBounds.appendChild(designImage);
+    
+    // Reset position
+    imageX = 0;
+    imageY = 0;
+    
+    // Add drag functionality
+    setupDragListeners();
+}
+
+// Setup drag listeners
+function setupDragListeners() {
+    designImage.addEventListener('mousedown', startDrag);
+    designImage.addEventListener('touchstart', startDrag);
+    
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('touchmove', drag);
+    
+    document.addEventListener('mouseup', stopDrag);
+    document.addEventListener('touchend', stopDrag);
+}
+
+function startDrag(e) {
+    isDragging = true;
+    
+    const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+    const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+    
+    dragStartX = clientX - imageX;
+    dragStartY = clientY - imageY;
+    
+    designImage.style.cursor = 'grabbing';
+    e.preventDefault();
+}
+
+function drag(e) {
+    if (!isDragging) return;
+    
+    const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+    const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+    
+    imageX = clientX - dragStartX;
+    imageY = clientY - dragStartY;
+    
+    // Apply position
+    updateImagePosition();
+    
+    e.preventDefault();
+}
+
+function stopDrag() {
+    if (isDragging) {
+        isDragging = false;
+        designImage.style.cursor = 'move';
+    }
+}
+
+function updateImagePosition() {
+    if (!designImage) return;
+    
+    const bounds = designBounds.getBoundingClientRect();
+    const imageRect = designImage.getBoundingClientRect();
+    
+    // Calculate how much of the image is outside the bounds
+    const leftOut = Math.max(0, bounds.left - imageRect.left);
+    const rightOut = Math.max(0, imageRect.right - bounds.right);
+    const topOut = Math.max(0, bounds.top - imageRect.top);
+    const bottomOut = Math.max(0, imageRect.bottom - bounds.bottom);
+    
+    // Calculate total area outside
+    const totalOut = leftOut + rightOut + topOut + bottomOut;
+    const maxOut = imageRect.width * 2; // Maximum distance before fully fading
+    
+    // Calculate opacity (fade out as image moves outside)
+    let opacity = 1 - (totalOut / maxOut);
+    opacity = Math.max(0, Math.min(1, opacity));
+    
+    designImage.style.opacity = opacity;
+    designImage.style.left = `calc(50% + ${imageX}px)`;
+    designImage.style.top = `calc(50% + ${imageY}px)`;
+}
+
+// Image size control
+imageSizeSlider.addEventListener('input', function() {
+    if (designImage) {
+        const size = this.value;
+        designImage.style.width = size + 'px';
+        designImage.style.height = size + 'px';
+        updateImagePosition();
+    }
+});
+
+// Remove image
+removeImageBtn.addEventListener('click', function() {
+    if (designImage) {
+        designImage.remove();
+        designImage = null;
+    }
+    uploadedImage = null;
+    imageUpload.value = '';
+    uploadedImageInfo.classList.add('hidden');
+    imageControls.classList.add('hidden');
+    imageSizeSlider.value = 100;
+    imageX = 0;
+    imageY = 0;
+});
+
+// Reset design
+resetDesignBtn.addEventListener('click', function() {
+    // Reset position and size
+    imageX = 0;
+    imageY = 0;
+    imageSizeSlider.value = 100;
+    
+    if (designImage) {
+        designImage.style.width = '100px';
+        designImage.style.height = '100px';
+        designImage.style.opacity = 1;
+        updateImagePosition();
+    }
+});
+
+// Add custom t-shirt to cart
+addCustomToCartBtn.addEventListener('click', function() {
+    if (!uploadedImage) {
+        alert('⚠️ Mesedez, kargatu irudi bat lehenik / Por favor, sube una imagen primero');
+        return;
+    }
+    
+    // Create custom product
+    const customProduct = {
+        name: `Kamiseta Pertsonalizatua / Camiseta Personalizada`,
+        price: 30,
+        image: uploadedImage,
+        color: currentColor,
+        custom: true
+    };
+    
+    // Add to cart
+    const existingItem = cart.find(item => item.custom && item.image === customProduct.image);
+    
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({ ...customProduct, quantity: 1 });
+    }
+    
+    updateCartCount();
+    saveCart();
+    
+    // Show success message
+    const successMsg = currentLang === 'eu' 
+        ? '✅ Kamiseta saskira gehitu da!' 
+        : '✅ ¡Camiseta añadida al carrito!';
+    
+    alert(successMsg);
+});
+
+// Drag and drop for image upload
+const uploadArea = document.querySelector('.border-dashed');
+
+uploadArea.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    this.classList.add('border-purple-500', 'bg-purple-50');
+});
+
+uploadArea.addEventListener('dragleave', function(e) {
+    e.preventDefault();
+    this.classList.remove('border-purple-500', 'bg-purple-50');
+});
+
+uploadArea.addEventListener('drop', function(e) {
+    e.preventDefault();
+    this.classList.remove('border-purple-500', 'bg-purple-50');
+    
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith('image/')) {
+        // Simulate file input change
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(file);
+        imageUpload.files = dataTransfer.files;
+        
+        // Trigger change event
+        const event = new Event('change', { bubbles: true });
+        imageUpload.dispatchEvent(event);
+    }
+});
