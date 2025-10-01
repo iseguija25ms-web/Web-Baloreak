@@ -103,6 +103,7 @@ html {
 
 .delay-100 { animation-delay: 0.1s; opacity: 0; }
 .delay-200 { animation-delay: 0.2s; opacity: 0; }
+.delay-250 { animation-delay: 0.25s; opacity: 0; }
 .delay-300 { animation-delay: 0.3s; opacity: 0; }
 .delay-400 { animation-delay: 0.4s; opacity: 0; }
 .delay-500 { animation-delay: 0.5s; opacity: 0; }
@@ -739,4 +740,54 @@ body {
 /* Price Highlight */
 .text-purple-600, .text-blue-600, .text-green-600 {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section Enhancements */
+.hero-section {
+    position: relative;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.hero-section .absolute.inset-0.z-0 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    animation: subtleZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes subtleZoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* Glassmorphism for inclusiveness badge */
+.hero-section .bg-white\/10 {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* Enhanced text shadows for hero */
+.drop-shadow-2xl {
+    text-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.drop-shadow-lg {
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.drop-shadow-md {
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }

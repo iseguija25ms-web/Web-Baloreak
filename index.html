@@ -20,8 +20,8 @@
                     <a href="#home" class="hover:text-purple-600 transition-colors translatable" data-eu="Hasiera" data-es="Inicio">Hasiera</a>
                     <a href="#about" class="hover:text-purple-600 transition-colors translatable" data-eu="Guri buruz" data-es="Sobre nosotros">Guri buruz</a>
                     <a href="#services" class="hover:text-purple-600 transition-colors translatable" data-eu="Zerbitzuak" data-es="Servicios">Zerbitzuak</a>
-                    <a href="#gallery" class="hover:text-purple-600 transition-colors translatable" data-eu="Galeria" data-es="Galería">Galeria</a>
-                    <a href="#testimonials" class="hover:text-purple-600 transition-colors translatable" data-eu="Iritziak" data-es="Testimonios">Iritziak</a>
+                    <a href="#gallery" class="hover:text-purple-600 transition-colors translatable" data-eu="Produktuak" data-es="Productos">Produktuak</a>
+                    <a href="#donations" class="hover:text-purple-600 transition-colors translatable" data-eu="Donazioak" data-es="Donaciones">Donazioak</a>
                     <a href="#contact" class="hover:text-purple-600 transition-colors translatable" data-eu="Kontaktua" data-es="Contacto">Kontaktua</a>
                     <button id="langToggle" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full hover:scale-110 transition-all font-semibold">
                         <i class="fas fa-language mr-2"></i>
@@ -53,36 +53,57 @@
                 <a href="#home" class="block hover:text-purple-600 transition-colors translatable" data-eu="Hasiera" data-es="Inicio">Hasiera</a>
                 <a href="#about" class="block hover:text-purple-600 transition-colors translatable" data-eu="Guri buruz" data-es="Sobre nosotros">Guri buruz</a>
                 <a href="#services" class="block hover:text-purple-600 transition-colors translatable" data-eu="Zerbitzuak" data-es="Servicios">Zerbitzuak</a>
-                <a href="#gallery" class="block hover:text-purple-600 transition-colors translatable" data-eu="Galeria" data-es="Galería">Galeria</a>
-                <a href="#testimonials" class="block hover:text-purple-600 transition-colors translatable" data-eu="Iritziak" data-es="Testimonios">Iritziak</a>
+                <a href="#gallery" class="block hover:text-purple-600 transition-colors translatable" data-eu="Produktuak" data-es="Productos">Produktuak</a>
+                <a href="#donations" class="block hover:text-purple-600 transition-colors translatable" data-eu="Donazioak" data-es="Donaciones">Donazioak</a>
                 <a href="#contact" class="block hover:text-purple-600 transition-colors translatable" data-eu="Kontaktua" data-es="Contacto">Kontaktua</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center pt-20">
-        <div class="max-w-7xl mx-auto px-6 py-20 text-center text-white">
-            <div class="animate-fadeInUp">
-                <h1 class="text-6xl md:text-8xl font-bold mb-6">BackflipStore</h1>
+    <section id="home" class="hero-section min-h-screen flex items-start justify-center pt-32 relative overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="main menu picture/menu 2.png" alt="BackflipStore Background" class="w-full h-full object-contain" style="object-position: center;">
+            <div class="absolute inset-0 bg-gradient-to-br from-purple-900/60 via-purple-800/50 to-pink-900/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="max-w-7xl mx-auto px-6 pt-12 pb-20 text-center text-white relative z-10">
+            <!-- Inclusiveness Message at Top -->
+            <div class="animate-fadeInUp mb-8">
+                <div class="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 shadow-xl">
+                    <i class="fas fa-heart text-pink-400 mr-3 text-xl"></i>
+                    <span class="text-sm md:text-base font-semibold translatable" 
+                          data-eu="Guztientzako moda - Sexu, arraza edo identitaterik gabe" 
+                          data-es="Moda para todos - Sin importar género, raza o identidad">
+                        Guztientzako moda - Sexu, arraza edo identitaterik gabe
+                    </span>
+                </div>
             </div>
+
             <div class="animate-fadeInUp delay-100">
-                <p class="text-2xl md:text-3xl mb-4 translatable" data-eu="Zure estiloko arropa" data-es="Ropa con tu estilo">Zure estiloko arropa</p>
+                <h1 class="text-6xl md:text-8xl font-bold mb-6 drop-shadow-2xl">BackflipStore</h1>
             </div>
             <div class="animate-fadeInUp delay-200">
-                <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto opacity-90 translatable" 
-                   data-eu="Vintage moda, jasangarritasuna eta sormen espiritua elkarrekin" 
-                   data-es="Moda vintage, sostenibilidad y espíritu creativo juntos">
-                   Vintage moda, jasangarritasuna eta sormen espiritua elkarrekin
-                </p>
+                <p class="text-2xl md:text-3xl mb-4 drop-shadow-lg translatable" data-eu="Zure estiloko arropa" data-es="Ropa con tu estilo">Zure estiloko arropa</p>
             </div>
             <div class="animate-fadeInUp delay-300">
-                <a href="#services" class="inline-block bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all hover:scale-110 shadow-2xl">
+                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90 drop-shadow-md translatable" 
+                   data-eu="Arropa zuretzat, dirua, behar dutenentzat" 
+                   data-es="Moda vintage, sostenibilidad y espíritu creativo juntos">
+                   Arropa zuretzat, dirua, behar dutenentzat
+                </p>
+            </div>
+            
+            <div class="animate-fadeInUp delay-400">
+                <a href="#services" class="inline-block bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all hover:scale-110 shadow-2xl hover:shadow-purple-500/50">
                     <span class="translatable" data-eu="Aurkitu gure arropa" data-es="Descubre nuestra ropa">Aurkitu gure arropa</span>
                     <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
             <div class="mt-16 animate-float">
-                <i class="fas fa-chevron-down text-4xl opacity-75"></i>
+                <i class="fas fa-chevron-down text-4xl opacity-75 drop-shadow-lg"></i>
             </div>
         </div>
     </section>
@@ -364,7 +385,7 @@
     <section id="gallery" class="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 animate-fadeInUp">
-                <h2 class="text-5xl font-bold mb-4 gradient-text translatable" data-eu="Gure Produktuak" data-es="Nuestros Productos">Gure Produktuak</h2>
+                <h2 class="text-5xl font-bold mb-4 gradient-text translatable" data-eu="Produktuak" data-es="Productos">Produktuak</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-6"></div>
                 <p class="text-xl text-gray-600 translatable" 
                    data-eu="Aurkitu gure arropa bikain eta berezien bilduma" 
@@ -850,6 +871,156 @@
         </div>
     </section>
 
+    <!-- Donations Section -->
+    <section id="donations" class="py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-pink-200 rounded-full filter blur-3xl opacity-20 animate-pulse" style="animation-delay: 1s;"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <!-- Header -->
+            <div class="text-center mb-16 animate-fadeInUp">
+                <div class="inline-block mb-6">
+                    <div class="bg-gradient-to-r from-purple-600 to-pink-600 w-20 h-20 rounded-full flex items-center justify-center shadow-2xl">
+                        <i class="fas fa-heart text-white text-3xl"></i>
+                    </div>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold mb-4 gradient-text translatable" 
+                    data-eu="BackFlipStoreri donazteko aukera" 
+                    data-es="Oportunidad de donar a BackFlipStore">
+                    BackFlipStoreri donazteko aukera
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-500 mx-auto mb-6"></div>
+                <p class="text-2xl font-bold text-gray-700 translatable" 
+                   data-eu="Zure arropak bizitza berria izan dezake. Eta bizitza bat ere alda dezake." 
+                   data-es="Tu ropa puede tener una nueva vida. Y también puede cambiar una vida.">
+                   Zure arropak bizitza berria izan dezake. Eta bizitza bat ere alda dezake.
+                </p>
+            </div>
+
+            <!-- NGO Partnership Image -->
+            <div class="mb-12 animate-fadeInUp delay-100">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-3xl transform rotate-3 opacity-20"></div>
+                        <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800" alt="Helping Hands" class="relative rounded-3xl shadow-2xl object-cover w-full h-80">
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i class="fas fa-hands-helping text-5xl text-pink-600"></i>
+                            <i class="fas fa-heart text-4xl text-purple-600"></i>
+                            <i class="fas fa-globe text-5xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-purple-700 mb-4 translatable"
+                            data-eu="Elkarlanean aldaketa sozialerako"
+                            data-es="Colaborando por el cambio social">
+                            Elkarlanean aldaketa sozialerako
+                        </h3>
+                        <p class="text-gray-600 text-lg translatable"
+                           data-eu="Zure donazioak zuzenean jendea laguntzen du eta planeta zaintzen du."
+                           data-es="Tus donaciones ayudan directamente a las personas y cuidan el planeta.">
+                            Zure donazioak zuzenean jendea laguntzen du eta planeta zaintzen du.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 mb-12 animate-fadeInUp delay-100">
+                <h3 class="text-3xl font-bold text-purple-700 mb-6 translatable"
+                    data-eu="BackFlipStoreri donazteko aukera"
+                    data-es="Oportunidad de donar a BackFlipStore">
+                    BackFlipStoreri donazteko aukera
+                </h3>
+                
+                <p class="text-xl font-bold text-gray-800 mb-6 translatable"
+                   data-eu="Zure arropak bizitza berria izan dezake. Eta bizitza bat ere alda dezake."
+                   data-es="Tu ropa puede tener una nueva vida. Y también puede cambiar una vida.">
+                    Zure arropak bizitza berria izan dezake. Eta bizitza bat ere alda dezake.
+                </p>
+                
+                <p class="text-lg text-gray-700 leading-relaxed mb-6 translatable"
+                   data-eu="Backflipstore-n uste sendo bat dugu: arropa batek bere balioa ez du galtzen erabiltzen ez dugunean. Horregatik, ingurumenarekiko eta gizartearekiko konpromiso argia hartu dugu. Gure helburua ez da bakarrik modan egotea, baizik eta modak gure inguruan duen eragina kontzienteki kudeatzea."
+                   data-es="En Backflipstore tenemos una creencia firme: una prenda no pierde su valor cuando no la usamos. Por eso, hemos asumido un compromiso claro con el medio ambiente y la sociedad. Nuestro objetivo no es solo estar a la moda, sino gestionar conscientemente el impacto que la moda tiene en nuestro entorno.">
+                    Backflipstore-n uste sendo bat dugu: arropa batek bere balioa ez du galtzen erabiltzen ez dugunean. Horregatik, ingurumenarekiko eta gizartearekiko konpromiso argia hartu dugu. Gure helburua ez da bakarrik modan egotea, baizik eta modak gure inguruan duen eragina kontzienteki kudeatzea.
+                </p>
+                
+                <p class="text-lg text-gray-700 leading-relaxed mb-6 translatable"
+                   data-eu="Hori dela eta, UNICEFekin elkarlanean ari gara, zure erabilitako arropa jasotzeko eta bigarren aukera bat emateko. Ekimen honen bidez, bi helburu lortzen ditugu:"
+                   data-es="Por ello, estamos colaborando con UNICEF para recoger tu ropa usada y darle una segunda oportunidad. A través de esta iniciativa, logramos dos objetivos:">
+                    Hori dela eta, UNICEFekin elkarlanean ari gara, zure erabilitako arropa jasotzeko eta bigarren aukera bat emateko. Ekimen honen bidez, bi helburu lortzen ditugu:
+                </p>
+                
+                <ul class="list-disc list-inside mb-8 text-lg text-gray-700 space-y-3">
+                    <li class="translatable" data-eu="Zabortegietan amaitzen den arropa kopurua murriztea, planeta zainduz." data-es="Reducir la cantidad de ropa que termina en vertederos, cuidando el planeta.">Zabortegietan amaitzen den arropa kopurua murriztea, planeta zainduz.</li>
+                    <li class="translatable" data-eu="Beharrik handiena duten komunitateei laguntza eskaintzea, elkartasunaren bidez." data-es="Ofrecer ayuda a las comunidades más necesitadas, a través de la solidaridad.">Beharrik handiena duten komunitateei laguntza eskaintzea, elkartasunaren bidez.</li>
+                </ul>
+                
+                <h4 class="text-2xl font-bold text-purple-700 mb-4 translatable"
+                    data-eu="Zure jantziek aukera berriak izan ditzakete:"
+                    data-es="Tus prendas pueden tener nuevas oportunidades:">
+                    Zure jantziek aukera berriak izan ditzakete:
+                </h4>
+                
+                <ul class="list-disc list-inside mb-6 text-lg text-gray-700 space-y-3">
+                    <li class="translatable" data-eu="Egoera onean dauden arropak berrerabili eta berriz saltzen ditugu, jasangarritasuna bultzatuz." data-es="Reutilizamos y revendemos la ropa en buen estado, promoviendo la sostenibilidad.">Egoera onean dauden arropak berrerabili eta berriz saltzen ditugu, jasangarritasuna bultzatuz.</li>
+                    <li class="translatable" data-eu="Beste batzuk berrerabiltzeko prest jartzen ditugu, eta UNICEFek garatzen dituen proiektu sozialetan txertatzen dira, laguntza moduan." data-es="Preparamos otras para reutilizarlas, y se integran en proyectos sociales desarrollados por UNICEF, como ayuda.">Beste batzuk berrerabiltzeko prest jartzen ditugu, eta UNICEFek garatzen dituen proiektu sozialetan txertatzen dira, laguntza moduan.</li>
+                </ul>
+                
+                <div class="bg-purple-50 rounded-2xl p-6 mb-8 border-l-4 border-purple-600">
+                    <p class="text-lg text-gray-800 italic translatable"
+                       data-eu="Hau ez da arropa jasotzeko kanpaina soil bat. Hau eraldaketarako aukera bat da: zure armairuan ahaztuta dagoen kamiseta batek haur baten egunerokoa hobetu dezake, edo planeta pixka bat garbiago utz dezakegu elkarrekin."
+                       data-es="Esto no es solo una campaña de recogida de ropa. Esta es una oportunidad de transformación: esa camiseta olvidada en tu armario puede mejorar el día a día de un niño, o podemos dejar el planeta un poco más limpio juntos.">
+                        Hau ez da arropa jasotzeko kanpaina soil bat. Hau eraldaketarako aukera bat da: zure armairuan ahaztuta dagoen kamiseta batek haur baten egunerokoa hobetu dezake, edo planeta pixka bat garbiago utz dezakegu elkarrekin.
+                    </p>
+                </div>
+                
+                <h4 class="text-2xl font-bold text-purple-700 mb-4 translatable"
+                    data-eu="Nola parte hartu?"
+                    data-es="¿Cómo participar?">
+                    Nola parte hartu?
+                </h4>
+                
+                <p class="text-lg text-gray-700 mb-4 translatable"
+                   data-eu="Oso erraza da:"
+                   data-es="Es muy fácil:">
+                    Oso erraza da:
+                </p>
+                
+                <ol class="list-decimal list-inside mb-8 text-lg text-gray-700 space-y-3">
+                    <li class="translatable" data-eu="Hautatu erabiltzen ez dituzun jantziak (garbi eta egoera onean daudela ziurtatu)." data-es="Selecciona las prendas que no uses (asegúrate de que estén limpias y en buen estado).">Hautatu erabiltzen ez dituzun jantziak (garbi eta egoera onean daudela ziurtatu).</li>
+                    <li class="translatable" data-eu="Ekar itzazu gure dendara." data-es="Tráelas a nuestra tienda.">Ekar itzazu gure dendara.</li>
+                    <li class="translatable" data-eu="Gu arduratuko gara hurrengo pausoez." data-es="Nosotros nos encargamos de los siguientes pasos.">Gu arduratuko gara hurrengo pausoez.</li>
+                </ol>
+                
+                <p class="text-xl font-bold text-purple-700 mb-4 translatable"
+                   data-eu="Zure keinu txiki batek aldaketa handia eragin dezake."
+                   data-es="Tu pequeño gesto puede causar un gran cambio.">
+                    Zure keinu txiki batek aldaketa handia eragin dezake.
+                </p>
+                
+                <p class="text-lg text-gray-700 translatable"
+                   data-eu="Backflipstore-n modaren etorkizuna jasangarriagoa eta solidarioagoa izatea nahi dugu. Eta horretarako, zure laguntza ezinbestekoa da."
+                   data-es="En Backflipstore queremos que el futuro de la moda sea más sostenible y solidario. Y para ello, tu ayuda es imprescindible.">
+                    Backflipstore-n modaren etorkizuna jasangarriagoa eta solidarioagoa izatea nahi dugu. Eta horretarako, zure laguntza ezinbestekoa da.
+                </p>
+            </div>
+
+            <!-- Donation Button -->
+            <div class="text-center mt-12 animate-fadeInUp delay-300">
+                <a href="https://www.proyectoabraham.org/contenedores/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-16 py-6 rounded-full font-bold text-2xl hover:from-purple-700 hover:to-pink-700 transition-all hover:scale-110 shadow-2xl hover:shadow-purple-500/50 group">
+                    <i class="fas fa-hand-holding-heart mr-4 text-3xl"></i>
+                    <span class="translatable" data-eu="Donatu" data-es="Donar">Donatu</span>
+                    <i class="fas fa-arrow-right ml-4 text-xl group-hover:translate-x-2 transition-transform"></i>
+                </a>
+                <p class="text-sm text-gray-600 mt-4 flex items-center justify-center">
+                    <i class="fas fa-external-link-alt mr-2"></i>
+                    <span class="translatable" data-eu="Proyecto Abraham webgunera eramango zaitu" data-es="Te llevará al sitio web de Proyecto Abraham">Proyecto Abraham webgunera eramango zaitu</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
@@ -868,6 +1039,7 @@
                         <li><a href="#home" class="hover:text-purple-400 transition-colors translatable" data-eu="Hasiera" data-es="Inicio">Hasiera</a></li>
                         <li><a href="#about" class="hover:text-purple-400 transition-colors translatable" data-eu="Guri buruz" data-es="Sobre nosotros">Guri buruz</a></li>
                         <li><a href="#services" class="hover:text-purple-400 transition-colors translatable" data-eu="Zerbitzuak" data-es="Servicios">Zerbitzuak</a></li>
+                        <li><a href="#donations" class="hover:text-purple-400 transition-colors translatable" data-eu="Donazioak" data-es="Donaciones">Donazioak</a></li>
                         <li><a href="#contact" class="hover:text-purple-400 transition-colors translatable" data-eu="Kontaktua" data-es="Contacto">Kontaktua</a></li>
                     </ul>
                 </div>
