@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BackflipStore - Zure estiloko arropa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <button id="langToggle" class="fixed top-6 right-6 z-50 bg-white shadow-lg rounded-full px-6 py-3 font-semibold hover:shadow-xl transition-all duration-300 hover:scale-110">
+        <i class="fas fa-language mr-2"></i>
+        <span id="langText">ES</span>
+    </button>
+
+    <nav class="bg-white shadow-md fixed w-full top-0 z-40">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-3xl font-bold gradient-text">BackflipStore</h1>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-purple-600 transition-colors translatable" data-eu="Hasiera" data-es="Inicio">Hasiera</a>
+                    <a href="#about" class="hover:text-purple-600 transition-colors translatable" data-eu="Guri buruz" data-es="Sobre nosotros">Guri buruz</a>
+                    <a href="#services" class="hover:text-purple-600 transition-colors translatable" data-eu="Zerbitzuak" data-es="Servicios">Zerbitzuak</a>
+                    <a href="#gallery" class="hover:text-purple-600 transition-colors translatable" data-eu="Galeria" data-es="Galería">Galeria</a>
+                    <a href="#testimonials" class="hover:text-purple-600 transition-colors translatable" data-eu="Iritziak" data-es="Testimonios">Iritziak</a>
+                    <a href="#contact" class="hover:text-purple-600 transition-colors translatable" data-eu="Kontaktua" data-es="Contacto">Kontaktua</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#home" class="block hover:text-purple-600 transition-colors translatable" data-eu="Hasiera" data-es="Inicio">Hasiera</a>
+                <a href="#about" class="block hover:text-purple-600 transition-colors translatable" data-eu="Guri buruz" data-es="Sobre nosotros">Guri buruz</a>
+                <a href="#services" class="block hover:text-purple-600 transition-colors translatable" data-eu="Zerbitzuak" data-es="Servicios">Zerbitzuak</a>
+                <a href="#gallery" class="block hover:text-purple-600 transition-colors translatable" data-eu="Galeria" data-es="Galería">Galeria</a>
+                <a href="#testimonials" class="block hover:text-purple-600 transition-colors translatable" data-eu="Iritziak" data-es="Testimonios">Iritziak</a>
+                <a href="#contact" class="block hover:text-purple-600 transition-colors translatable" data-eu="Kontaktua" data-es="Contacto">Kontaktua</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 py-20 text-center text-white">
+            <div class="animate-fadeInUp">
+                <h1 class="text-6xl md:text-8xl font-bold mb-6">BackflipStore</h1>
+            </div>
+            <div class="animate-fadeInUp delay-100">
+                <p class="text-2xl md:text-3xl mb-4 translatable" data-eu="Zure estiloko arropa" data-es="Ropa con tu estilo">Zure estiloko arropa</p>
+            </div>
+            <div class="animate-fadeInUp delay-200">
+                <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto opacity-90 translatable" 
+                   data-eu="Vintage moda, jasangarritasuna eta sormen espiritua elkarrekin" 
+                   data-es="Moda vintage, sostenibilidad y espíritu creativo juntos">
+                   Vintage moda, jasangarritasuna eta sormen espiritua elkarrekin
+                </p>
+            </div>
+            <div class="animate-fadeInUp delay-300">
+                <a href="#services" class="inline-block bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all hover:scale-110 shadow-2xl">
+                    <span class="translatable" data-eu="Aurkitu gure arropa" data-es="Descubre nuestra ropa">Aurkitu gure arropa</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="mt-16 animate-float">
+                <i class="fas fa-chevron-down text-4xl opacity-75"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-5xl font-bold mb-4 gradient-text translatable" data-eu="Guri buruz" data-es="Sobre nosotros">Guri buruz</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slideInLeft">
+                    <div class="bg-gradient-to-br from-purple-500 to-blue-500 rounded-3xl p-8 shadow-2xl hover-scale">
+                        <i class="fas fa-heart text-white text-6xl mb-4"></i>
+                        <h3 class="text-3xl font-bold text-white mb-4 translatable" data-eu="Gure Misioa" data-es="Nuestra Misión">Gure Misioa</h3>
+                        <p class="text-white text-lg leading-relaxed translatable" 
+                           data-eu="BackflipStore ez da ohiko arropa denda bat. Gure helburua vintage modaren munduan sartzea eta bezero bakoitzari estilo berezia eta bizia eskaintzea da, betiere ingurumenarekiko errespetu eta jasangarritasun printzipioekin." 
+                           data-es="BackflipStore no es una tienda de ropa común. Nuestro objetivo es adentrarnos en el mundo de la moda vintage y ofrecer a cada cliente un estilo especial y vivo, siempre con respeto al medio ambiente y principios de sostenibilidad.">
+                           BackflipStore ez da ohiko arropa denda bat. Gure helburua vintage modaren munduan sartzea eta bezero bakoitzari estilo berezia eta bizia eskaintzea da, betiere ingurumenarekiko errespetu eta jasangarritasun printzipioekin.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="animate-slideInRight">
+                    <div class="bg-gradient-to-br from-blue-500 to-purple-500 rounded-3xl p-8 shadow-2xl hover-scale">
+                        <i class="fas fa-leaf text-white text-6xl mb-4"></i>
+                        <h3 class="text-3xl font-bold text-white mb-4 translatable" data-eu="Jasangarritasuna" data-es="Sostenibilidad">Jasangarritasuna</h3>
+                        <p class="text-white text-lg leading-relaxed translatable" 
+                           data-eu="Arropa berrerabiltzea eta berritzea gure funtsezko zutabeak dira. Bezeroek erabili gabeko edo zaharkitutako arropak donatu ditzakete, eta guk haiek berriz bizia ematen diegu, kontzientzia ekologikoarekin eta estilo originalarekin." 
+                           data-es="La reutilización y renovación de ropa son nuestros pilares fundamentales. Los clientes pueden donar ropa sin usar u obsoleta, y nosotros les damos nueva vida, con conciencia ecológica y estilo original.">
+                           Arropa berrerabiltzea eta berritzea gure funtsezko zutabeak dira. Bezeroek erabili gabeko edo zaharkitutako arropak donatu ditzakete, eta guk haiek berriz bizia ematen diegu, kontzientzia ekologikoarekin eta estilo originalarekin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-5xl font-bold mb-4 gradient-text translatable" data-eu="Gure Zerbitzuak" data-es="Nuestros Servicios">Gure Zerbitzuak</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 translatable" 
+                   data-eu="Erosi ezazu denetarik, arropa pertsonalizatua, kamisetak, galtzak eta arropa mota asko" 
+                   data-es="Compra de todo, ropa personalizada, camisetas, pantalones y muchos tipos de ropa">
+                   Erosi ezazu denetarik, arropa pertsonalizatua, kamisetak, galtzak eta arropa mota asko
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale card-shine animate-scaleIn delay-100">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-shopping-bag text-purple-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center translatable" data-eu="Arropen Salmenta" data-es="Venta de Ropa">Arropen Salmenta</h3>
+                    <p class="text-gray-600 text-center translatable" 
+                       data-eu="Vintage eta estilo bereziko arropa aukeraketa zabala" 
+                       data-es="Amplia selección de ropa vintage y de estilo especial">
+                       Vintage eta estilo bereziko arropa aukeraketa zabala
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale card-shine animate-scaleIn delay-200">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-gift text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center translatable" data-eu="Arropen Donazioak" data-es="Donaciones de Ropa">Arropen Donazioak</h3>
+                    <p class="text-gray-600 text-center translatable" 
+                       data-eu="Ekarri zure arropak eta eman bigarren aukera bat" 
+                       data-es="Trae tu ropa y dale una segunda oportunidad">
+                       Ekarri zure arropak eta eman bigarren aukera bat
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale card-shine animate-scaleIn delay-300">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-recycle text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center translatable" data-eu="Arropen Berrerabilketa" data-es="Reutilización de Ropa">Arropen Berrerabilketa</h3>
+                    <p class="text-gray-600 text-center translatable" 
+                       data-eu="Arropa zaharra berrituko dugu estilo eta kalitatearekin" 
+                       data-es="Renovaremos ropa antigua con estilo y calidad">
+                       Arropa zaharra berrituko dugu estilo eta kalitatearekin
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale card-shine animate-scaleIn delay-400">
+                    <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-paint-brush text-pink-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center translatable" data-eu="Arropa Diseinatu" data-es="Diseño de Ropa">Arropa Diseinatu</h3>
+                    <p class="text-gray-600 text-center translatable" 
+                       data-eu="Pertsonalizatu zure arropa eta sortu pieza bakarrak" 
+                       data-es="Personaliza tu ropa y crea piezas únicas">
+                       Pertsonalizatu zure arropa eta sortu pieza bakarrak
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4 gradient-text translatable" data-eu="Zergatik BackflipStore?" data-es="¿Por qué BackflipStore?">Zergatik BackflipStore?</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 animate-fadeInUp delay-100">
+                    <div class="bg-gradient-to-br from-purple-500 to-blue-500 w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+                        <i class="fas fa-tshirt text-white text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 translatable" data-eu="Estilo Berezia" data-es="Estilo Especial">Estilo Berezia</h3>
+                    <p class="text-gray-600 translatable" 
+                       data-eu="Aurkitu pieza bakarrak eta bereziak, zure nortasuna adierazteko" 
+                       data-es="Encuentra piezas únicas y especiales para expresar tu personalidad">
+                       Aurkitu pieza bakarrak eta bereziak, zure nortasuna adierazteko
+                    </p>
+                </div>
+
+                <div class="text-center p-6 animate-fadeInUp delay-200">
+                    <div class="bg-gradient-to-br from-blue-500 to-purple-500 w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+                        <i class="fas fa-earth-americas text-white text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 translatable" data-eu="Ingurumenaren Zaintza" data-es="Cuidado del Medio Ambiente">Ingurumenaren Zaintza</h3>
+                    <p class="text-gray-600 translatable" 
+                       data-eu="Kontzientzia ekologikoarekin lan egiten dugu, planeta zaintzeko" 
+                       data-es="Trabajamos con conciencia ecológica para cuidar el planeta">
+                       Kontzientzia ekologikoarekin lan egiten dugu, planeta zaintzeko
+                    </p>
+                </div>
+
+                <div class="text-center p-6 animate-fadeInUp delay-300">
+                    <div class="bg-gradient-to-br from-purple-500 to-pink-500 w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+                        <i class="fas fa-users text-white text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 translatable" data-eu="Komunitatea" data-es="Comunidad">Komunitatea</h3>
+                    <p class="text-gray-600 translatable" 
+                       data-eu="Moda zentzudunean sinesten duen komunitatearen zati izan" 
+                       data-es="Sé parte de una comunidad que cree en la moda consciente">
+                       Moda zentzudunean sinesten duen komunitatearen zati izan
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 text-center text-white">
+                <div class="stat-item">
+                    <i class="fas fa-users text-5xl mb-4"></i>
+                    <div class="text-5xl font-bold mb-2" data-count="5000">0</div>
+                    <p class="text-xl translatable" data-eu="Bezero pozik" data-es="Clientes felices">Bezero pozik</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-tshirt text-5xl mb-4"></i>
+                    <div class="text-5xl font-bold mb-2" data-count="15000">0</div>
+                    <p class="text-xl translatable" data-eu="Arropa pieza" data-es="Piezas de ropa">Arropa pieza</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-recycle text-5xl mb-4"></i>
+                    <div class="text-5xl font-bold mb-2" data-count="8000">0</div>
+                    <p class="text-xl translatable" data-eu="Berrerabiliak" data-es="Reutilizadas">Berrerabiliak</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-leaf text-5xl mb-4"></i>
+                    <div class="text-5xl font-bold mb-2">95<span class="text-3xl">%</span></div>
+                    <p class="text-xl translatable" data-eu="Jasangarritasuna" data-es="Sostenibilidad">Jasangarritasuna</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4 gradient-text translatable" data-eu="Gure Arropa Galeria" data-es="Nuestra Galería de Ropa">Gure Arropa Galeria</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 translatable" data-eu="Aurkitu vintage pieza ederrak eta bakarrak" data-es="Descubre hermosas y únicas piezas vintage">Aurkitu vintage pieza ederrak eta bakarrak</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group">
+                    <div class="aspect-square bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center">
+                        <i class="fas fa-tshirt text-white text-6xl"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-2xl font-bold mb-2 translatable" data-eu="Kamiseta Vintage" data-es="Camisetas Vintage">Kamiseta Vintage</h3>
+                            <p class="translatable" data-eu="Diseinu bakarrak" data-es="Diseños únicos">Diseinu bakarrak</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group">
+                    <div class="aspect-square bg-gradient-to-br from-blue-400 to-purple-400 flex items-center justify-center">
+                        <i class="fas fa-vest text-white text-6xl"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-2xl font-bold mb-2 translatable" data-eu="Jaka Klasikoak" data-es="Chaquetas Clásicas">Jaka Klasikoak</h3>
+                            <p class="translatable" data-eu="Estilo dotorea" data-es="Estilo elegante">Estilo dotorea</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group">
+                    <div class="aspect-square bg-gradient-to-br from-pink-400 to-purple-400 flex items-center justify-center">
+                        <i class="fas fa-hat-cowboy text-white text-6xl"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-2xl font-bold mb-2 translatable" data-eu="Osagarriak" data-es="Accesorios">Osagarriak</h3>
+                            <p class="translatable" data-eu="Xehetasun perfektuak" data-es="Detalles perfectos">Xehetasun perfektuak</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group">
+                    <div class="aspect-square bg-gradient-to-br from-indigo-400 to-blue-400 flex items-center justify-center">
+                        <i class="fas fa-jeans text-white text-6xl"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-2xl font-bold mb-2 translatable" data-eu="Galtza Denimak" data-es="Pantalones Denim">Galtza Denimak</h3>
+                            <p class="translatable" data-eu="Kalitate altua" data-es="Alta calidad">Kalitate altua</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group">
+                    <div class="aspect-square bg-gradient-to-br from-purple-400 to-indigo-400 flex items-center justify-center">
+                        <i class="fas fa-shirt text-white text-6xl"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-2xl font-bold mb-2 translatable" data-eu="Alkandorak" data-es="Camisas">Alkandorak</h3>
+                            <p class="translatable" data-eu="Estilo eta erosotasuna" data-es="Estilo y comodidad">Estilo eta erosotasuna</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl shadow-lg group">
+                    <div class="aspect-square bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center">
+                        <i class="fas fa-crown text-white text-6xl"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-2xl font-bold mb-2 translatable" data-eu="Pieza Premium" data-es="Piezas Premium">Pieza Premium</h3>
+                            <p class="translatable" data-eu="Kolekzio berezia" data-es="Colección especial">Kolekzio berezia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4 gradient-text translatable" data-eu="Bezeroek diotena" data-es="Lo que dicen nuestros clientes">Bezeroek diotena</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-2xl font-bold">
+                            M
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Maialen</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic translatable" 
+                       data-eu="BackflipStore-n nire estiloa aurkitu dut! Arropak kalitate handikoak dira eta prezioak oso onak. Gainera, jasangarritasuna bultzatzen dute. Benetan gomendagarria!" 
+                       data-es="¡He encontrado mi estilo en BackflipStore! La ropa es de gran calidad y los precios son muy buenos. Además, promueven la sostenibilidad. ¡Realmente recomendable!">
+                       BackflipStore-n nire estiloa aurkitu dut! Arropak kalitate handikoak dira eta prezioak oso onak. Gainera, jasangarritasuna bultzatzen dute. Benetan gomendagarria!
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-2xl font-bold">
+                            A
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Aitor</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic translatable" 
+                       data-eu="Vintage arropa bila nenbilen eta hemen pieza ederrak topatu ditut. Pertsonalizazio zerbitzua bikaina da. Nire kamisetak diseinu propioarekin egin nuen. Emaitza perfektua!" 
+                       data-es="Buscaba ropa vintage y aquí he encontrado piezas hermosas. El servicio de personalización es excelente. Hice mis camisetas con diseño propio. ¡Resultado perfecto!">
+                       Vintage arropa bila nenbilen eta hemen pieza ederrak topatu ditut. Pertsonalizazio zerbitzua bikaina da. Nire kamisetak diseinu propioarekin egin nuen. Emaitza perfektua!
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center text-white text-2xl font-bold">
+                            L
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Leire</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic translatable" 
+                       data-eu="Ez da ohiko denda bat! Komunitatearen zatia sentitzen naiz. Nire arropa zaharrak donatu nituen eta beste batzuk erosi. Ingurumena zaintzea garrantzitsua da niretzat. Eskerrik asko!" 
+                       data-es="¡No es una tienda común! Me siento parte de la comunidad. Doné mi ropa vieja y compré otras. Cuidar el medio ambiente es importante para mí. ¡Gracias!">
+                       Ez da ohiko denda bat! Komunitatearen zatia sentitzen naiz. Nire arropa zaharrak donatu nituen eta beste batzuk erosi. Ingurumena zaintzea garrantzitsua da niretzat. Eskerrik asko!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4 gradient-text translatable" data-eu="Nola funtzionatzen dugu" data-es="Cómo funcionamos">Nola funtzionatzen dugu</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center process-step">
+                    <div class="relative">
+                        <div class="w-24 h-24 mx-auto bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white text-4xl font-bold mb-6 shadow-lg">
+                            1
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 translatable" data-eu="Aukeratu" data-es="Elige">Aukeratu</h3>
+                    <p class="text-gray-600 translatable" data-eu="Gure galerian nabigatu eta zure gogoko arropak aurkitu" data-es="Navega por nuestra galería y encuentra tu ropa favorita">Gure galerian nabigatu eta zure gogoko arropak aurkitu</p>
+                </div>
+
+                <div class="text-center process-step">
+                    <div class="relative">
+                        <div class="w-24 h-24 mx-auto bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-4xl font-bold mb-6 shadow-lg">
+                            2
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 translatable" data-eu="Pertsonalizatu" data-es="Personaliza">Pertsonalizatu</h3>
+                    <p class="text-gray-600 translatable" data-eu="Nahi baduzu, zure arropa pertsonalizatu dezakezu" data-es="Si quieres, puedes personalizar tu ropa">Nahi baduzu, zure arropa pertsonalizatu dezakezu</p>
+                </div>
+
+                <div class="text-center process-step">
+                    <div class="relative">
+                        <div class="w-24 h-24 mx-auto bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-4xl font-bold mb-6 shadow-lg">
+                            3
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 translatable" data-eu="Jaso" data-es="Recibe">Jaso</h3>
+                    <p class="text-gray-600 translatable" data-eu="Zure arropak azkar eta seguru jasoko dituzu etxean" data-es="Recibirás tu ropa rápida y segura en casa">Zure arropak azkar eta seguru jasoko dituzu etxean</p>
+                </div>
+
+                <div class="text-center process-step">
+                    <div class="relative">
+                        <div class="w-24 h-24 mx-auto bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white text-4xl font-bold mb-6 shadow-lg">
+                            4
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 translatable" data-eu="Gozatu" data-es="Disfruta">Gozatu</h3>
+                    <p class="text-gray-600 translatable" data-eu="Zure estilo berriaz gozatu eta planeta zaindu" data-es="Disfruta de tu nuevo estilo y cuida el planeta">Zure estilo berriaz gozatu eta planeta zaindu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gradient-bg py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center text-white">
+            <h2 class="text-5xl font-bold mb-6 animate-fadeInUp translatable" 
+                data-eu="Prest zaude zure estiloa aldatzeko?" 
+                data-es="¿Estás listo para cambiar tu estilo?">
+                Prest zaude zure estiloa aldatzeko?
+            </h2>
+            <p class="text-xl mb-10 animate-fadeInUp delay-100 translatable" 
+               data-eu="Elkartu BackflipStore komunitatearekin eta aurkitu zure estilo berezia" 
+               data-es="Únete a la comunidad BackflipStore y encuentra tu estilo especial">
+               Elkartu BackflipStore komunitatearekin eta aurkitu zure estilo berezia
+            </p>
+            <div class="animate-fadeInUp delay-200">
+                <button id="openContactModal" class="bg-white text-purple-600 px-12 py-4 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all hover:scale-110 shadow-2xl btn-pulse">
+                    <span class="translatable" data-eu="Hasi orain" data-es="Empieza ahora">Hasi orain</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4 gradient-text translatable" data-eu="Harremanetan jarri" data-es="Ponte en contacto">Harremanetan jarri</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center hover-scale">
+                    <i class="fas fa-envelope text-purple-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 translatable" data-eu="Email" data-es="Correo">Email</h3>
+                    <p class="text-gray-600">backflipstore@gmail.com</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center hover-scale">
+                    <i class="fas fa-phone text-purple-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 translatable" data-eu="Telefonoa" data-es="Teléfono">Telefonoa</h3>
+                    <p class="text-gray-600">+34 916 117 001</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center hover-scale">
+                    <i class="fas fa-map-marker-alt text-purple-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 translatable" data-eu="Helbidea" data-es="Dirección">Helbidea</h3>
+                    <p class="text-gray-600">Gipuzkoa, San Sebastian</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">BackflipStore</h3>
+                    <p class="text-gray-400 translatable" 
+                       data-eu="Zure estiloko arropa, jasangarritasunarekin" 
+                       data-es="Ropa con tu estilo, con sostenibilidad">
+                       Zure estiloko arropa, jasangarritasunarekin
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 translatable" data-eu="Estekak" data-es="Enlaces">Estekak</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-purple-400 transition-colors translatable" data-eu="Hasiera" data-es="Inicio">Hasiera</a></li>
+                        <li><a href="#about" class="hover:text-purple-400 transition-colors translatable" data-eu="Guri buruz" data-es="Sobre nosotros">Guri buruz</a></li>
+                        <li><a href="#services" class="hover:text-purple-400 transition-colors translatable" data-eu="Zerbitzuak" data-es="Servicios">Zerbitzuak</a></li>
+                        <li><a href="#contact" class="hover:text-purple-400 transition-colors translatable" data-eu="Kontaktua" data-es="Contacto">Kontaktua</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 translatable" data-eu="Zerbitzuak" data-es="Servicios">Zerbitzuak</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="translatable" data-eu="Arropen salmenta" data-es="Venta de ropa">Arropen salmenta</li>
+                        <li class="translatable" data-eu="Donazioak" data-es="Donaciones">Donazioak</li>
+                        <li class="translatable" data-eu="Berrerabilketa" data-es="Reutilización">Berrerabilketa</li>
+                        <li class="translatable" data-eu="Pertsonalizazioa" data-es="Personalización">Pertsonalizazioa</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 translatable" data-eu="Jarraitu gaitzazu" data-es="Síguenos">Jarraitu gaitzazu</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-purple-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-purple-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-purple-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 BackflipStore. <span class="translatable" data-eu="Eskubide guztiak erreserbatuak" data-es="Todos los derechos reservados">Eskubide guztiak erreserbatuak</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
